@@ -10,6 +10,9 @@ import UIKit
 
 class FungjaiTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var namelabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

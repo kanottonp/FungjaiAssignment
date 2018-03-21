@@ -14,6 +14,7 @@
 		CA2F0CB2206152DD00E8FE15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2F0CB0206152DD00E8FE15 /* LaunchScreen.storyboard */; };
 		CA2F0CBD206152DD00E8FE15 /* FungjaiAwesomeListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F0CBC206152DD00E8FE15 /* FungjaiAwesomeListTests.swift */; };
 		CA2F0CC8206152DD00E8FE15 /* FungjaiAwesomeListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F0CC7206152DD00E8FE15 /* FungjaiAwesomeListUITests.swift */; };
+		CA2F0CD620620BA400E8FE15 /* FungjaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F0CD520620BA400E8FE15 /* FungjaiTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CA2F0CC3206152DD00E8FE15 /* FungjaiAwesomeListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FungjaiAwesomeListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2F0CC7206152DD00E8FE15 /* FungjaiAwesomeListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungjaiAwesomeListUITests.swift; sourceTree = "<group>"; };
 		CA2F0CC9206152DD00E8FE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA2F0CD520620BA400E8FE15 /* FungjaiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungjaiTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				CA2F0CAE206152DD00E8FE15 /* Assets.xcassets */,
 				CA2F0CB0206152DD00E8FE15 /* LaunchScreen.storyboard */,
 				CA2F0CB3206152DD00E8FE15 /* Info.plist */,
+				CA2F0CD520620BA400E8FE15 /* FungjaiTableViewCell.swift */,
 			);
 			path = FungjaiAwesomeList;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2F0CD620620BA400E8FE15 /* FungjaiTableViewCell.swift in Sources */,
 				CA2F0CAA206152DD00E8FE15 /* ViewController.swift in Sources */,
 				CA2F0CA8206152DD00E8FE15 /* AppDelegate.swift in Sources */,
 			);

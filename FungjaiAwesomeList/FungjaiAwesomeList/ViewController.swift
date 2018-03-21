@@ -47,6 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         
+        tableView.rowHeight = 125
+       
         
         let url = URL(string:"https://www.anop72.info/api/seed.json" )
         URLSession.shared.dataTask(with: url!) { (data, res, error) in
@@ -58,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                 }
 
                 DispatchQueue.main.async {
-                    print(self.covers.count)
+//                    print(self.covers.count)
                     self.tableView.reloadData()
 //                    for cover in self.covers {
 //                        print(cover.cover)
@@ -72,19 +74,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         return covers.count
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
-    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
 
     let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! FungjaiTableViewCell
     cell.namelabel.text = covers[indexPath.row].name
+    cell.namelabel.lineBreakMode = .byWordWrapping
+    cell.namelabel.numberOfLines = 0
+        
+        
     cell.coverImage.contentMode = .scaleToFill
     cell.coverImage.downloadedFrom(link: covers[indexPath.row].cover)
         
-    cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2 
+    cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+        
     return cell
     }
 }

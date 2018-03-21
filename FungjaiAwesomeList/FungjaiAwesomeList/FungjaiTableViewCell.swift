@@ -15,15 +15,16 @@ class FungjaiTableViewCell: UITableViewCell {
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var videoLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.coverImage.image = nil
+        self.namelabel.text = ""
+        self.videoLabel.text = ""
+        self.videoImage.image = nil
+    
+
+
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

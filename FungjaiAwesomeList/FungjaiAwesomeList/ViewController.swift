@@ -39,6 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     var covers = [Cover]()
     @IBOutlet weak var tableView: UITableView!
+   
     
     
     override func viewDidLoad() {
@@ -46,10 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        
         tableView.rowHeight = 125
-       
-        
+    
         let url = URL(string:"https://www.anop72.info/api/seed.json" )
         URLSession.shared.dataTask(with: url!) { (data, res, error) in
             if error == nil {
@@ -61,6 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
                 DispatchQueue.main.async {
 //                    print(self.covers.count)
+
                     self.tableView.reloadData()
 //                    for cover in self.covers {
 //                        print(cover.cover)
@@ -78,17 +78,33 @@ class ViewController: UIViewController, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
 
     let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! FungjaiTableViewCell
-    cell.namelabel.text = covers[indexPath.row].name
-    cell.namelabel.lineBreakMode = .byWordWrapping
-    cell.namelabel.numberOfLines = 0
+    
+    if covers[indexPath.row].type == "track" {
+        cell.namelabel.text = covers[indexPath.row].name
+        cell.namelabel.lineBreakMode = .byWordWrapping
+        cell.namelabel.numberOfLines = 0
         
+        cell.coverImage.downloadedFrom(link: covers[indexPath.row].cover)
+        cell.coverImage.contentMode = .scaleAspectFill
+    
+    return cell
         
-    cell.coverImage.contentMode = .scaleToFill
-    cell.coverImage.downloadedFrom(link: covers[indexPath.row].cover)
+    }
         
-    cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+    else if (covers[indexPath.row].type == "video" || covers[indexPath.row].type == "ads") {
+        cell.videoLabel.text = covers[indexPath.row].name
+        cell.videoLabel.lineBreakMode = .byWordWrapping
+        cell.videoLabel.numberOfLines = 0
+        
+        cell.videoImage.downloadedFrom(link: covers[indexPath.row].cover)
+        cell.videoImage.contentMode = .scaleAspectFill
+        
+    return cell
+        
+    }
         
     return cell
     }
-}
+    
 
+}

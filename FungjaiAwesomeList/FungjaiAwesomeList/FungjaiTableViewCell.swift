@@ -13,6 +13,8 @@ class FungjaiTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var namelabel: UILabel!
+    @IBOutlet weak var videoImage: UIImageView!
+    @IBOutlet weak var videoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
